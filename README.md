@@ -1,7 +1,7 @@
 
 # Portfolio Template
 
-This website serves as an online portfolio to showcase your web presence, résumé, skills, &  projects. You can simply clone this website and change the respective fiels according to you, 
+This website serves as an online portfolio to showcase your web presence, résumé, skills, &  projects. You can simply clone this website and change the respective fields according to you, 
 It was generated using using HTML, CSS and JS.
 
 
