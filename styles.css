@@ -1,0 +1,628 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Nunito&family=Ubuntu:wght@700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito',sans-serif;
+  text-decoration: none;
+  outline: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background: #fff;
+  height: 100vh;
+}
+.navbar{
+  position: fixed;
+  content: '';
+  width: 100%;
+  padding: 5px 15px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+}
+.navbar .logo{
+  color: #fff;
+  font-family: Arial;
+}
+.navbar .navBtn{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.navbar .navBtn:before{
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transform: translateY(-7px);
+  transform-origin: top;
+  transition: 0.3s;
+}
+.navbar .navBtn div{
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.navbar .navBtn:after{
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transform: translateY(7px);
+  transform-origin: bottom;
+  transition: 0.3s;
+}
+.navbar .navBtn.act:before{
+  transform: rotate(-45deg);
+}
+.navbar .navBtn.act div{
+  margin-left: 100%;
+  opacity: 0;
+}
+.navbar .navBtn.act:after{
+  transform: rotate(45deg);
+}
+.sidebar{
+  position: fixed;
+  left: -100%;
+  width: 250px;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.3s;
+}
+.sidebar.active{
+  left: 0;
+}
+.sidebar ul{
+  margin-top: 60px;
+}
+.sidebar ul li a{
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  color: #fff;
+  font-weight: bold;
+}
+.sidebar ul li a:hover{
+  background: rgba(255,255,255,0.5);
+  color: #000;
+  transition: 0.5s;
+}
+.sidebar .social{
+  width: 60%;
+  margin: 10% auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+.sidebar .social a{
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+  font-size: 20px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 3px;
+}
+/* end navbar*/
+ 
+/* back to top button*/
+.top-btn{
+  position: fixed;
+  content:'';
+  bottom: 20px;
+  right:-100%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  z-index: 5;
+  transition: 0.3s ease-in;
+}
+.top-btn.tb{
+  right: 20px;
+}
+/* main header */
+header{
+  width: 100%;
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://dl.dropbox.com/s/onbjgkggdufgetf/header.jpg?dl=0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .content{
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+}
+header .content a{
+  padding: 6px 15px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  font-weight: bold;
+}
+header .content i{
+  font-size: 20px;
+  animation: up 3s linear infinite;
+}
+@keyframes up{
+  0%{
+    transform: translateY(20px);
+  }
+  50%{
+    transform: translateY(40px);
+    color: #ddd;
+  }
+  70%{
+    transform: translateY(60px);
+  }
+  100%{
+    transform: translateY(0);
+    color: #fff;
+  }
+}
+/* end header */
+.container{
+  width: 92%;
+  margin: 3% auto;
+  overflow: hidden;
+}
+.container .title{
+  text-align: center;
+  padding: 10px 0;
+  width: 90%;
+  margin: 5px auto;
+  position: relative;
+}
+.container .title:before{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #5f8dee;
+  border-radius: 5px;
+}
+.container .title:after{
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: translate(-50%,0);
+  bottom: -1px;
+  width: 100px;
+  height: 4px;
+  background: #5f8dee;
+  border-radius: 10px;
+}
+.container .about-section{
+  width: 100%;
+  margin: 3% auto;
+  padding: 20px 0;
+}
+.container .about-section .card{
+  width: 94%;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 0 20px #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  padding-bottom: 20px;
+}
+.container .about-section .card img{
+  width: 200px;
+  margin: 5% auto;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border: 2px solid  #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+.container .about-section .card h2{
+  padding: 10px 0;
+  text-align: center;
+}
+.container .about-section .card p{
+  padding: 10px;
+  text-align: left;
+}
+.container .about-section .card  table{
+  color: #5f8dee;
+  font-weight: bold;
+  padding:5px 10px;
+  text-align: left;
+}
+.container .about-section .card table tr td:nth-child(2),
+.container .about-section .card table tr td:nth-child(4){
+  color: #333;
+  padding-left: 5px;
+}
+.container .about-section .card a{
+  padding: 10px 20px;
+  background: #5f8dee;
+  color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #ddd;
+  text-align: left;
+}
+/* end about section */
+/* activetiy status */
+.container .status{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 3% auto;
+}
+.container .status .box{
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  padding-top: 30px;
+  border: 1px dotted #ddd;
+  margin: 5px auto;
+}
+.container .skills-section{
+  width: 100%;
+  margin: 3% auto;
+  overflow: hidden;
+}
+.container .skills-section .skills{
+  padding: 15px;
+}
+.container .skills-section .skills .skills-bar{
+  margin: 6% auto;
+}
+/* progress bar*/
+  .container .skills-section .skills .skills-bar .bar{
+  width: 100%;
+  height: 8px;
+  background: #eee;
+}
+ .container .skills-section .skills .skills-bar .bar .html{
+   position: relative;
+  width: 95%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .bar .css{
+   position: relative;
+  width: 85%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .bar .js{
+   position: relative;
+  width: 45%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .bar .boot{
+   position: relative;
+  width: 65%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .bar .jquery{
+   position: relative;
+  width: 55%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .bar .mater{
+   position: relative;
+  width: 35%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .bar .php{
+   position: relative;
+  width: 15%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .bar .java{
+   position: relative;
+  width: 20%;
+  height: 8px;
+  background: #5f8dee;
+}
+.container .skills-section .skills .skills-bar .html:before{
+  position: absolute;
+  content: '90%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .css:before{
+  position: absolute;
+  content: '85%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .js:before{
+  position: absolute;
+  content: '45%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .boot:before{
+  position: absolute;
+  content: '75%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .jquery:before{
+  position: absolute;
+  content: '55%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .mater:before{
+  position: absolute;
+  content: '35%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .php:before{
+  position: absolute;
+  content: '15%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .java:before{
+  position: absolute;
+  content: '20%';
+  bottom: 20px;
+  left: 95%;
+  background: #000;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.container .skills-section .skills .skills-bar .html:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+.container .skills-section .skills .skills-bar .css:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+.container .skills-section .skills .skills-bar .js:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+.container .skills-section .skills .skills-bar .boot:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+.container .skills-section .skills .skills-bar .jquery:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+.container .skills-section .skills .skills-bar .mater:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+.container .skills-section .skills .skills-bar .php:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+.container .skills-section .skills .skills-bar .java:after{
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 98%;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  z-index: -1;
+}
+/* end skills section */
+.container .services-section{
+  width: 100%;
+  padding: 15px 5px;
+  margin: 3% auto;
+}
+.container .services-section .services{
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .services-section .services .box{
+  width: 280px;
+  height: 280px;
+  margin: 10px auto;
+  padding-top: 50px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+.container .services-section .services .box i{
+  font-size: 90px;
+  padding-bottom: 20px;
+}
+.container .contact{
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.container .contact form{
+  width: 100%;
+  padding: 30px 5px;
+}
+.container .contact form .input{
+  width: 100%;
+  height: 45px;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+}
+.contact form .input i{
+  color: #8c8c8c;
+  width: 45px;
+  line-height: 35px;
+  font-size: 22px;
+  text-align: center;
+}
+.contact form .input input{
+  width: 80%;
+  height: 100%;
+  border: none;
+}
+.contact form .input label{
+  position: absolute;
+  content: '';
+  left: 50px;
+  bottom: 10px;
+  color: #adadad;
+  font-size: 20px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.contact form textarea{
+  width: 100%;
+  height: 100px;
+  border: none;
+  border: 2px solid #ddd;
+  padding: 15px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+.contact form button{
+  width: 100px;
+  height: 44px;
+  background: #5f8dee;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: none;
+}
+.contact form .input input:focus ~ label,
+.contact form .input input:valid ~ label{
+  transform: translateY(-25px);
+  font-weight: bold;
+  color: #333;
+}
+footer{
+  width: 100%;
+  padding: 10px 15px;
+  text-align: center;
+  background: #000;
+  color: #eee;
+}
