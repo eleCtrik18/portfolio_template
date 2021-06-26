@@ -10,6 +10,7 @@ It was generated using using HTML, CSS and JS.
 - Simple and Beginner Friendly
 - Easy to use
 - Responsive
+- Mobile Friendly
 
 
   
